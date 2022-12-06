@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+
+*.log
+*.sql
+*.sqlite
+.vscode/
+
+.wp-env.override.json
+.husky

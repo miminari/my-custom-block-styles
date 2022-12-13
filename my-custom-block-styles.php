@@ -38,10 +38,9 @@ add_action('after_setup_theme', 'mcbs_style_setup');
 function mcbs_editor_style_setup()
 {
     add_theme_support('editor-styles');
-    // テーマからの相対パスで指定.
     wp_enqueue_style('my-custom-block-styles-for-editor', MCBS_PLUGIN_URL . '/editor-style.css', false, filemtime(MCBS_PLUGIN_PATH . '/editor-style.css'));
 }
-add_action('enqueue_block_editor_assets', 'mcbs_editor_style_setup', 12);
+add_action('enqueue_block_editor_assets', 'mcbs_editor_style_setup');
 
 /**
  * Add custom front style

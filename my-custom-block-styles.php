@@ -4,7 +4,7 @@
  * Plugin Name: my custom block styles
  * Description: サイト用にカスタマイズしたブロックスタイルを追加します
  * Author: mimi
- * Version: 0.0.1
+ * Version: 0.0.2
  * Text Domain: mcbs
  */
 
@@ -39,9 +39,9 @@ function mcbs_editor_style_setup()
 {
     add_theme_support('editor-styles');
     // テーマからの相対パスで指定.
-    add_editor_style('../../plugins/my-custom-block-styles/style.css');
+    wp_enqueue_style('my-custom-block-styles-for-editor', MCBS_PLUGIN_URL . '/editor-style.css', false, filemtime(MCBS_PLUGIN_PATH . '/editor-style.css'));
 }
-add_action('after_setup_theme', 'mcbs_editor_style_setup', 12);
+add_action('enqueue_block_editor_assets', 'mcbs_editor_style_setup', 12);
 
 /**
  * Add custom front style
@@ -53,4 +53,4 @@ function mcbs_front_style_setup()
 {
     wp_enqueue_style('my-custom-block-styles', MCBS_PLUGIN_URL . '/style.css', false, filemtime(MCBS_PLUGIN_PATH . '/style.css'));
 }
-add_action('wp_enqueue_scripts','mcbs_front_style_setup',12);
+add_action('wp_enqueue_scripts', 'mcbs_front_style_setup', 12);

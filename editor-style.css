@@ -1,3 +1,8 @@
+
 .wp-block-button.is-style-arrow .wp-block-button__link {
     background: red;
+    font-weight: bold;
+}
+.editor-styles-wrapper .wp-block-button .wp-block-button__link {
+    background: blue;
 }
